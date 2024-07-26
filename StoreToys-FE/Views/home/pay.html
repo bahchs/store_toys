@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thanh toán</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+<div class="wrapper">
+    <header class="header">
+        <!-- Header content -->
+    </header>
+    <div class="container">
+        <h1>Thanh toán</h1>
+        <form id="checkoutForm">
+            <label for="totalMoney">Tổng tiền:</label>
+            <input type="text" id="totalMoney" name="totalMoney" readonly required><br><br>
+
+            <label for="orderDate">Ngày đặt hàng:</label>
+            <input type="date" id="orderDate" name="orderDate" required><br><br>
+
+            <label for="note">Ghi chú:</label>
+            <textarea id="note" name="note"></textarea><br><br>
+            <div id="productList">
+            </div>
+
+            <button type="submit">Thanh toán</button>
+        </form>
+    </div>
+    <footer class="footer">
+        <!-- Footer content -->
+    </footer>
+</div>
+<script>
+window.onload = function() {
+    const user = JSON.parse(localStorage.getItem('user')); 
+    const userId = user ? user.user_id : null; 
+    const checkoutForm = document.getElementById('checkoutForm');
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const totalMoney = urlParams.get('totalMoney');
+
+    document.getElementById('totalMoney').value = totalMoney;
+
+    checkoutForm.addEventListener('submit', function(event) {
+        event.preventDefault(); 
+
+        const orderDate = document.getElementById('orderDate').value;
+        const note = document.getElementById('note').value;
+
+        const orderData = {
+            user_id: userId,
+            total_money: totalMoney,
+            order_date: orderDate,
+            note: note,
+            product: []
+        };
+
+        fetch('http://localhost/StoreToys-BE/API/order', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(orderData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            alert('Thanh toán thành công! Mua tiếp đi bạn');
+            window.location.href = 'home.html';
+        })
+        .catch(error => console.error('Error:', error));
+    });
+};
+
+</script>
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+}
+
+.wrapper {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.header,
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
+}
+</style>
+</body>
+</html>

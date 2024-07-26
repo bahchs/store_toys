@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../Assets/css/admin/admin.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header-title">
+        <h1 style="margin-left: 120px;">ADMIN</h1>
+        <h1 > Cửa hàng Stoys</h1>
+        <div style="margin-right: 120px;margin-top: 3.5rem;" class="back">
+            <a style="color: white;" href="../home/Home.html">Đến trang chủ</a>
+            <i class="bx bx-right-arrow-alt"></i>
+        </div>
+    </header>
+
+    <div class="contain">
+        <div class="left">
+            <div style="display: flex;background: #92b14a;" class="avatar">
+                <h1>admin</h1>
+            </div>
+            <div class="menu">
+                <div class="taikhoan">
+                    <h3>Quản lý tài khoản</h3>
+                    <ul> 
+                        <li><a href="../user/AddUser.html">Thêm tài khoản</a></li>
+                        <li><a href="../user/UserManagerment.html">Danh sách tài khoản</a></li>
+                    </ul>
+                </div>
+                <div class="taikhoan">
+                    <h3>Quản lý danh mục sản phẩm</h3>
+                    <ul>
+                        <li><a href="../category/AddCategory.html">Thêm danh mục sản phẩm</a></li>
+                        <li><a href="../category/CategoryManagerment.html">Danh sách danh mục sản phẩm</a></li>
+                    </ul>
+                </div>
+                <div class="taikhoan">
+                    <h3>Quản lý thương hiệu</h3>
+                    <ul>
+                        <li><a href="../brand/AddBrand.html">Thêm thương hiệu</a></li>
+                        <li><a href="../brand/BrandManagerment.html">Danh sách thương hiệu</a></li>
+                    </ul>
+                </div>
+                <div class="taikhoan">
+                    <h3>Quản lý sản phẩm</h3>
+                    <ul> 
+                        <li><a href="AddProduct.html">Thêm sản phẩm</a></li>
+                        <li><a href="">Danh sách sản phẩm</a></li>
+                    </ul>
+                </div>
+                <div class="taikhoan">
+                    <h3>Quản lý đơn hàng</h3>
+                    <ul>
+                        <li><a href="">Danh sách đơn hàng</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+<style>
+    table tr th,td{
+    border: 1px solid #000;
+    text-align: center;
+    padding: 0.5rem;
+}
+table{
+    border-collapse: collapse;
+}
+</style>
+        <div class="right">
+                <div class="header">
+                    <h1>Danh Sách Sản Phẩm</h1>
+                </div>
+                <div class="list-acc">
+                    <table style="width: 1000px;" class="table">
+                        <thead>
+                            <tr>
+                            <th style="margin-left: 2rem;" scope="col">#</th>
+                            <th style="margin-left: 2rem;" scope="col">Tên Sản Phẩm</th>
+                            <th style="margin-left: 2rem;" scope="col">Ảnh</th>
+                            <th style="margin-left: 2rem;" scope="col">Giới tính</th>
+                            <th style="margin-left: 2rem;" scope="col">Giá</th>
+                            <th style="margin-left: 2rem;" scope="col">Danh Mục</th>
+                            <th style="margin-left: 2rem;" scope="col">Thương Hiệu</th>
+                            </tr>
+                        </thead>
+                        <tbody id="product">
+                        </tbody>
+                    </table>
+                </div>
+            
+        </div>
+
+    </div>
+
+
+    <div class="modal js-modal">
+        <div class="modal-container">
+            <div class="modal-close">
+                <button onClick="hiddenUpdateProduct()">X</button>
+            </div>
+            <header class="modal-header">Cập nhật sản phẩm</header>
+            <div class="modal-body">
+                <div class="column">
+                    <label for="category" class="modal-label">Tên danh mục</label>
+                    <select id="category" name="input-category">
+
+                    </select>
+                    <label for="brand" class="modal-label">Thương hiệu</label>
+                    <select id="brand" name="input-brand">
+                        
+                    </select>
+                    <label for="product_name" class="modal-label">Tên sản phẩm</label>
+                    <input id="product_name" type="text" placeholder="Họ và tên" name="input-product_name">
+                    <label for="product_img" class="modal-label">Ảnh</label>
+                    <input id="product_img" type="file" placeholder="product_img" name="input-product_img">
+                </div>
+                <div class="column">
+                    <label for="product_sex" class="modal-label">Giới tính</label>
+                    <input id="product_sex" type="tel" placeholder="Giới tính" name="input-product_sex">
+                    <label for="product_price" class="modal-label">Giá</label>
+                    <input id="product_price" type="text" placeholder="Giá" name="input-product_price">
+                </div>
+                <button id="update" onclick="updateProduct()">Cập nhật</button>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+<script src = "ProductManagerment.js"></script>
+</html>

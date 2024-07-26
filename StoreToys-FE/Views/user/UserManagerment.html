@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quản lý tài khoản</title>
+<link rel="stylesheet" href="../../Assets/css/admin/admin.css">
+<link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+<header class="header-title">
+    <h1 style="margin-left: 120px;">ADMIN</h1>
+    <h1>Cửa hàng Stoys</h1>
+    <div style="margin-right: 120px;margin-top: 3.5rem;" class="back">
+        <a style="color: white;" href="../home/Home.html">Đến trang chủ</a>
+        <i class="bx bx-right-arrow-alt"></i>
+    </div>
+</header>
+<div class="contain">
+    <div class="left">
+        <div style="display: flex;background: #92b14a;" class="avatar">
+            <h1>admin</h1>
+        </div>
+        <div class="menu">
+            <div class="taikhoan">
+                <h3>Quản lý tài khoản</h3>
+                <ul> 
+                    <li><a href="AddUser.html">Thêm tài khoản</a></li>
+                    <li><a href="UserManagerment.html">Danh sách tài khoản</a></li>
+                </ul>
+            </div>
+            <div class="taikhoan">
+                <h3>Quản lý danh mục sản phẩm</h3>
+                <ul>
+                    <li><a href="../category/AddCategory.html">Thêm danh mục sản phẩm</a></li>
+                    <li><a href="../category/CategoryManagerment.html">Danh sách danh mục sản phẩm</a></li>
+                </ul>
+            </div>
+			<div class="taikhoan">
+                    <h3>Quản lý thương hiệu</h3>
+                    <ul>
+                        <li><a href="../brand/AddBrand.html">Thêm thương hiệu</a></li>
+                        <li><a href="../brand/BrandManagerment.html">Danh sách thương hiệu</a></li>
+                    </ul>
+                </div>
+                <div class="taikhoan">
+                    <h3>Quản lý sản phẩm</h3>
+                    <ul> 
+                        <li><a href="../product/AddProduct.html">Thêm sản phẩm</a></li>
+                        <li><a href="../product/ProductManagerment.html">Danh sách sản phẩm</a></li>
+                    </ul>
+                </div>
+                <div class="taikhoan">
+                    <h3>Quản lý đơn hàng</h3>
+                    <ul>
+                        <li><a href="">Danh sách đơn hàng</a></li>
+                    </ul>
+                </div>
+            <!-- Các mục menu khác -->
+        </div>
+    </div>
+    <div class="right">
+        <div class="header">
+            <h1>Quản lý tài khoản</h1>  
+        </div>
+        <div class="list-acc">
+            <table style="width: 1000px;" class="table">
+                <thead>
+                    <tr>
+                        <th style="margin-left: 2rem;" scope="col">STT</th>
+                        <th style="margin-left: 2rem;" scope="col">Tên tài khoản</th>
+                        <th style="margin-left: 2rem;" scope="col">Mật khẩu</th>
+                        <th style="margin-left: 2rem;" scope="col">Họ và tên</th>
+                        <th style="margin-left: 2rem;" scope="col">Email</th>
+                        <th style="margin-left: 2rem;" scope="col">Điện thoại</th>
+                        <th style="margin-left: 2rem;" scope="col">Địa chỉ</th>
+                        <th style="margin-left: 2rem;" scope="col">Giới tính</th>
+                        <th style="margin-left: 2rem;" scope="col">Vai trò</th>
+                        <th style="margin-left: 2rem;" scope="col">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody id="user-list">
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal js-modal">
+    <div class="modal-container">
+        <div class="modal-close">
+            <button onClick="hiddenUpdateUser()">X</button>
+        </div>
+        <header class="modal-header">Cập nhật danh mục</header>
+        <div class="modal-body">
+            <div class="column">
+                <label for="username" class="modal-label">Tên tài khoản</label>
+                <input id="username" type="text" placeholder="Tên tài khoản" name="input-username">
+                <label for="password" class="modal-label">Mật khẩu</label>
+                <input id="password" type="text" placeholder="Mật khẩu" name="input-password">
+                <label for="fullname" class="modal-label">Họ và tên</label>
+                <input id="fullname" type="text" placeholder="Họ và tên" name="input-fullname">
+                <label for="email" class="modal-label">Email</label>
+                <input id="email" type="email" placeholder="Email" name="input-email">
+            </div>
+            <div class="column">
+                <label for="phone" class="modal-label">Điện thoại</label>
+                <input id="phone" type="tel" placeholder="Điện thoại" name="input-phone">
+                <label for="address" class="modal-label">Địa chỉ</label>
+                <input id="address" type="text" placeholder="Địa chỉ" name="input-address">
+                <label for="sex" class="modal-label">Giới tính</label>
+                <select id="sex" name="input-sex">
+                    <option value="Nam">Nam</option>
+                    <option value="Nữ">Nữ</option>
+                </select>
+                <label for="role" class="modal-label">Vai trò</label>
+                <select id="role" name="input-role">
+                    <option value="1">Admin</option>
+                    <option value="0">Người dùng</option>
+                </select>
+            </div>
+            <button id="update" onclick="updateUser()">Cập nhật</button>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
+<script src="UserManagerment.js"></script>
+</body>
+</html>

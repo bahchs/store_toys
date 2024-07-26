@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+.container{
+    text-align: center;
+    margin-top: 10%;
+}
+.container img{
+    width: 10%;
+}
+.container h1{
+    color: #34eb83;
+}
+.container i{
+    font-size: 1.4rem;
+    margin-top: 20px;
+}
+.container a{
+    display: block;
+    width: 20%;
+    text-decoration: none;
+    border: 1px solid #272727;
+    color: #fff;
+    background-color: #272727;
+    margin: 20px auto;
+    padding: 15px 0;
+    font-size: 1.4rem;
+}

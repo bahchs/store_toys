@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thêm Người Dùng</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+
+<body>
+<div class="container my-5">
+    <form id="userForm">
+        <div class="mb-3">
+            <label class="form-label">Tên đăng nhập</label>
+            <input type="text" class="form-control" placeholder="Nhập tên đăng nhập" name="username" autocomplete="off">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Mật khẩu</label>
+            <input type="password" class="form-control" placeholder="Nhập mật khẩu" name="password" autocomplete="current-password">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Họ và tên</label>
+            <input type="text" class="form-control" placeholder="Nhập họ và tên" name="fullname" autocomplete="off">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Số điện thoại</label>
+            <input type="tel" class="form-control" placeholder="Nhập số điện thoại" name="phone" autocomplete="off">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Địa chỉ</label>
+            <input type="text" class="form-control" placeholder="Nhập địa chỉ" name="address" autocomplete="off">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="text" class="form-control" placeholder="Nhập email" name="email" autocomplete="off">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Giới tính</label>
+            <select class="form-select" name="sex">
+                <option value="Nam">Nam</option>
+                <option value="Nữ">Nữ</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Quyền</label>
+            <select class="form-select" name="role">
+                <option value="1">Admin</option>
+                <option value="0">User</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary" name="submit" id="btnSubmit">Thêm</button>
+    </form>
+</div>
+<script src="AddUser.js"></script>
+</body>
+</html>

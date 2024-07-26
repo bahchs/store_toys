@@ -1,0 +1,164 @@
+.header-title {
+    background-color: #2f8796;
+    color: #fff;
+    padding: 20px;
+    position: fixed; /* Đặt phần header thành phần cố định */
+    top: 0; /* Đặt vị trí đỉnh của header ở trên cùng */
+    left: 0; /* Đặt vị trí bên trái của header */
+    width: 100%; /* Đặt chiều rộng của header để bằng 100% của trình duyệt */
+   	z-index: 100;  /*Đặt z-index để đảm bảo header nằm phía trên các phần tử khác */
+    display: flex;
+    justify-content: space-between;
+    
+}
+body{
+    margin-top: 100px;
+    position: absolute;
+}
+a{
+    text-decoration: none;
+}
+.contain{
+    display: flex;
+}
+.left{
+    
+    position: relative;
+    margin-top: 50px;
+    border:1px solid gray;
+    margin-left: 2rem;
+    width: 320px;
+    height: auto;
+}
+.avatar{
+    justify-content: center;
+}
+.right{
+    position: relative;
+    margin-top: 50px;
+    border:1px solid gray;
+    margin-left: 2rem;
+    width: 1000px;
+    height: auto;
+}
+.header{
+    text-align: center;
+    background-color: aqua;
+    padding: 1rem 0 0.5rem 0;
+    justify-content: center;
+}
+table tr th,td{
+    border: 1px solid #000;
+    text-align: center;
+    padding: 0.5rem;
+}
+table{
+    border-collapse: collapse;
+}
+
+.modal{
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background-color: rgba(0,0,0,0.4);
+	display: none;
+	align-items: center;
+	justify-content: center;
+	z-index: 200;
+}
+.modal.open{
+	display: flex;
+}
+.modal-container{
+	background: #fff;
+	width: 700px;
+	min-height: 200px;
+	position: relative;
+	animation: modalShow ease .5s;
+}
+.modal-close{
+	background-color: #009688;
+	border: none;
+	color: #fff;
+	position: absolute;
+	right: 0;
+	padding: 5px;
+}
+.modal-close button{
+	background-color: #009688;
+	color: #fff;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+}
+.modal header{
+	background-color: #009688;
+    display: flex;
+    height: 120px;
+    font-size: 30px;
+    color: #fff;
+	align-items: center;
+	justify-content: center;
+/*	position: relative;*/
+}
+.modal-body{
+	padding: 16px;
+    background-color: #fff;
+}
+.modal-label{
+	display: block;
+	font-size: 20px;
+	margin-bottom: 12px;
+}
+.modal-body input{
+	box-sizing: border-box;
+	margin-bottom: 24px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: 100%;
+    font-size: 15px;
+	
+}
+.modal-body button{
+	background-color: #009688;
+	border: none;
+	color: #fff;
+	width: 100%;
+	font-size: 20px;
+	padding: 18px;
+	margin-bottom: 10px;
+	cursor: pointer;
+}
+.modal-body {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between;
+}
+
+.modal-body .column {
+    flex: 0 1 calc(50% - 20px); 
+    margin-bottom: 20px; 
+}
+
+.modal-label, .modal-body input, .modal-body select {
+    width: 100%; 
+    margin-bottom: 10px; 
+}
+.modal-body .column select {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+@keyframes modalShow{
+	from{
+		opacity: 0;
+		transform: translateY(-200px);
+	}
+	to{
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}

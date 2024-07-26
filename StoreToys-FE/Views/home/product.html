@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chi tiết Sản phẩm</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+<link rel="stylesheet" href="../../Assets/css/home/base.css">
+<link rel="stylesheet" href="../../Assets/css/home/main.css">
+<link rel="stylesheet" href="../../Assets/css/home/container.css">
+<link rel="stylesheet" href="../../Assets/css/home/productDetail.css">
+
+</head>
+<body>
+<div class="wrapper">
+	<div class="promo-bar">
+        <span style="color: #F2C75C">Freeship cho đơn từ 1.000.000đ nội thành Hà Nội</span>
+    </div>
+    <header class="header">
+        <div class="header-first">
+            <div class="header-container">
+                <h1 class="logo">
+                    <a href="Home.html">
+                        <img src="../../Assets/image/stoys.png" style="width: 80px">
+                    </a>
+                </h1>
+                <div class="search">
+                    <form class="search-form">
+                        <input type="text" size="20" class="search-input" placeholder="Bạn tìm đồ chơi gì?" name="search">
+                        <button type="submit" class="search-button">
+                            <i class="fas fa-search search-icon hover-icon" aria-hidden="true"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="icon">
+                    <div class="fa">
+                        <a href="" class="fa fa-map-marker map-marker-icon hover-icon"></a>
+                    </div>
+                    <div>
+                        <a href="../login/Login.html" class="fa fa-user-circle user-circle-icon hover-icon"></a>
+                    </div>
+                    <div>
+                        <a href="Cart.html" class="fa fa-shopping-cart shopping-cart-icon hover-icon">
+                            <span class="number-product"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="header-navbar">
+            <div class="grid">
+                <ul class="navbar-list">
+                    <li class="navbar-item navbar-item-news">
+                        <div class="navbar-news">
+                            <ul class="news-list">
+                                <li class="list-content hover-region">
+                                    <a href="cogihot/gocdochoi.php" class="content">Blog đồ chơi</a>
+                                </li>
+                                <li class="list-content hover-region">
+                                    <a href="cogihot/camnangbome.php" class="content">Cẩm nang bố mẹ thông thái</a>
+                                </li>
+                                <li class="list-content hover-region">
+                                    <a href="cogihot/sukien.php" class="content">Sự kiện Funnyland</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="" class="item-link hover-icon">Có gì hot?</a>
+                    </li>
+                    <li class="navbar-item navbar-item-sex">
+                        <div class="navbar-sex">
+                            <ul class="news-list">
+                                <li class="list-content hover-region">
+                                    <a href="gioitinh.php?sex=nam" class="content">Bé trai</a>
+                                </li>
+                                <li class="list-content hover-region">
+                                    <a href="gioitinh.php?sex=nu" class="content">Bé gái</a>
+                                </li>
+                                <li class="list-content hover-region">
+                                    <a href="gioitinh.php?sex=unisex" class="content">Unisex</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="" class="item-link hover-icon">Giới tính</a>
+                    </li>
+                    <li class="navbar-item navbar-item-category">
+                        <div class="navbar-category">
+                            <ul class="news-list" id="category-name"></ul>
+                        </div>
+                        <a href="" class="item-link hover-icon">Thể loại</a>
+                    </li>
+                    <li class="navbar-item navbar-item-brand">
+                        <div class="navbar-brand">
+                            <ul class="news-list" id="brand-name"></ul>
+                        </div>
+                        <a href="" class="item-link hover-icon">Thương hiệu</a>
+                    </li>
+                    <li class="navbar-item hover-region">
+                        <a href="hethongcuahang.php" class="item-link hover-icon">Thông tin</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="product-details">
+            <div class="product-image">
+                <img id="productImage" src="" alt="Tên Sản phẩm">
+            </div>
+            <div class="product-info">
+                <h1 class="product-name"></h1>
+                <p class="product-price"></p>
+                <p class="product-category"></p>
+                <p class="product-brand"></p>
+                <p class="product-sex"></p>
+                <button id="addToCartBtn" class="add-to-cart">Thêm vào giỏ hàng</button>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+    </footer>
+</div>
+<script src="product.js"></script>
+<!--
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.container {
+    padding: 20px;
+}
+
+.product-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.product-image {
+    flex: 0 0 40%;
+    max-width: 40%;
+    margin-right: 20px;
+}
+
+.product-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px; 
+}
+
+.product-info {
+    flex: 0 0 60%;
+    max-width: 60%;
+}
+
+.product-name {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #333; 
+}
+
+.product-price {
+    font-size: 18px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.add-to-cart {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #0056b3;
+}
+
+.footer {
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd; 
+}
+</style>
+-->
+</body>
+</html>

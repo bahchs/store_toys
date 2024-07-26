@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>Create Product</title>
+</head>
+<body>
+    <div class="container my-5">
+        <form id="userForm">
+            <div class="mb-3">
+                <div class="mb-3">
+                    <label for="category_id" class="form-label">Category</label>
+                    <select class="form-select" id="category_id" name="category_id">
+                        
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="brand_id" class="form-label">Brand</label>
+                    <select class="form-select" id="brand_id" name="brand_id">
+                        
+                    </select>
+                </div>
+                <label class="form-label">Product Name</label>
+                <input type="text" class="form-control" placeholder="name" name="product_name" autocomplete="off">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Product Image</label>
+                <input type="file" class="form-control" placeholder="ảnh" name="product_image" autocomplete="current-password">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Product sex</label>
+                <input type="text" class="form-control" placeholder="giới tính" name="product_sex" autocomplete="off">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Product price</label>
+                <input type="number" class="form-control" placeholder="price" name="product_price" autocomplete="off">
+            </div>
+            
+            <button type="submit" class="btn btn-primary" name="submit" id="btnSubmit">Thêm</button>
+        </form>
+    </div>
+    <script src="AddProduct.js"></script>
+</body>
+</html>
